@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import SearchInput from "components/SearchInput";
 import Title from "components/Title";
 import React from "react";
