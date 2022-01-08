@@ -1,3 +1,9 @@
+# api keys
+.env
+
+# dependecies
 node_modules
+
+# other files
 style-guide.md
 design
