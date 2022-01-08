@@ -2,24 +2,15 @@ import { Box } from "@mui/material";
 import SearchInput from "components/SearchInput";
 import Title from "components/Title";
 import React from "react";
+import { SearchSection } from "./components";
 
 const SearchPage: React.FC = () => {
   return (
     <>
-      <Box
-        sx={{
-          width: "100%",
-          height: "250px",
-          display: "flex", 
-          alignItems: "center",
-          flexDirection: "column",
-          justifyContent: "space-evenly",
-          backgroundImage: `url(https://i.ibb.co/4YyyJwj/pattern-Bg.png`,
-        }}
-      >
+      <SearchSection>
         <Title />
         <SearchInput />
-      </Box>
+      </SearchSection>
       {/* <IpData /> */}
       {/* <Map /> */}
     </>
