@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import IpData from "components/IpData";
 import SearchInput from "components/SearchInput";
 import Title from "components/Title";
@@ -12,7 +13,9 @@ const SearchPage: React.FC = () => {
         <Title />
         <SearchInput />
       </SearchSection>
-      <IpData />
+      <Box sx={{ width: '100vw', display: 'flex', justifyContent: 'center' }}>
+        <IpData />
+      </Box>
       {/* <Map /> */}
     </IpDataProvider>
   );

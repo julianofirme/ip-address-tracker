@@ -1,13 +1,16 @@
-import { ipData } from "modules/ip-data/model";
+import { IpData } from "modules/ip-data/model";
 import { getData } from "modules/ip-data/services";
 import { useState, createContext, useEffect, SetStateAction } from "react";
 
 interface dataContext {
-  setIpAddress: (_: SetStateAction<string>) => void
-  ipData: ipData
+  setIpAddress: (_: SetStateAction<string>) => void;
+  ipData: IpData;
+  ipAddress: string;
 }
 
 const defaultIpDataValues = {
+  ip: "",
+  location: {
     country: "",
     region: "",
     city: "",
@@ -16,24 +19,26 @@ const defaultIpDataValues = {
     postalCode: "",
     timezone: "",
     geonameId: 0,
-}
+  },
+};
 
 const defaultValues: dataContext = {
   setIpAddress: function (_: SetStateAction<string>): void {},
-  ipData: defaultIpDataValues
-}
+  ipData: defaultIpDataValues,
+  ipAddress: "",
+};
 
-export const ipDataContext = createContext(defaultValues)
+export const ipDataContext = createContext(defaultValues);
 
 const IpDataProvider = (props: any) => {
   const [ipAddress, setIpAddress] = useState<string>("");
-  const [ipData, setIpData] = useState<ipData>(defaultIpDataValues);
+  const [ipData, setIpData] = useState<IpData>(defaultIpDataValues);
 
   useEffect(() => {
     (async () => {
       try {
         const params = {
-          apiKey: `${process.env.IP_GEOLOCATION_API_KEY}`,
+          apiKey: `${process.env.REACT_APP_IP_GEOLOCATION_API_KEY}`,
           ipAddress: ipAddress,
         };
         const data = await getData(params);
@@ -45,15 +50,16 @@ const IpDataProvider = (props: any) => {
   }, [ipAddress]);
 
   return (
-    <ipDataContext.Provider 
+    <ipDataContext.Provider
       value={{
         setIpAddress,
-        ipData
+        ipData,
+        ipAddress,
       }}
     >
       {props.children}
     </ipDataContext.Provider>
-  )
+  );
 };
 
 export default IpDataProvider;
