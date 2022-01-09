@@ -33,7 +33,7 @@ const IpDataProvider = (props: any) => {
     (async () => {
       try {
         const params = {
-          apiKey: `${process.env.IP_GEOLOCATION_API_KEY}`,
+          apiKey: `${process.env.REACT_APP_IP_GEOLOCATION_API_KEY}`,
           ipAddress: ipAddress,
         };
         const data = await getData(params);

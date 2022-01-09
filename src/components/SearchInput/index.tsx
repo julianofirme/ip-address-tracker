@@ -1,16 +1,37 @@
-import React from "react";
-import { Box, IconButton, OutlinedInput } from "@mui/material";
+import React, { useContext, useState } from "react";
+import { Box, Button, IconButton, OutlinedInput } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { ipDataContext } from "providers/ipDataProvider";
 
 const SearchInput: React.FC = () => {
+  const { setIpAddress } = useContext(ipDataContext);
+  const [inputValue, setInputValue] = useState<string>("");
+
+  const handleChange = (event: any) => {
+    const {
+      target: { value }
+    } = event
+
+    setInputValue(value)
+  }
+
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <OutlinedInput
-        sx={{ background: "#fff", borderRadius: "14px 0 0 14px", width: "420px" }}
+        sx={{
+          background: "#fff",
+          borderRadius: "14px 0 0 14px",
+          width: "420px",
+        }}
         placeholder="Search for any IP address"
         inputProps={{ "aria-label": "search ip address" }}
+        onChange={handleChange}
       />
-      <IconButton type="submit" aria-label="search ip address" sx={{ p: 0 }}>
+      <IconButton
+        aria-label="search ip address"
+        sx={{ p: 0 }}
+        onClick={() => setIpAddress(inputValue)}
+      >
         <Box
           sx={{
             p: "10px",
