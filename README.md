@@ -18,7 +18,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Material UI](https://mui.com/pt/) - For components
 - [IP Geolocation API](https://geo.ipify.org/) - For IP location
-- [Leaflet](https://leafletjs.com/) - For maps
+- [Mapbox](https://www.mapbox.com/) - For map component
 
 ## Author
 
