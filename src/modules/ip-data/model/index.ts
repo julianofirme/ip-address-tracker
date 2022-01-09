@@ -1,4 +1,4 @@
-export interface ipData {
+interface LocationData {
   country: string;
   region: string;
   city: string;
@@ -7,4 +7,9 @@ export interface ipData {
   postalCode: string;
   timezone: string;
   geonameId: number;
+}
+
+export interface IpData {
+  ip: string
+  location: LocationData
 }
