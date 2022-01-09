@@ -7,8 +7,8 @@ const SearchSection = styled(Box)(() => ({
   display: "flex", 
   alignItems: "center",
   flexDirection: "column",
-  justifyContent: "space-evenly",
   backgroundImage: `url(https://i.ibb.co/4YyyJwj/pattern-Bg.png)`,
+  padding: '24px 0',
 }))
 
 export { SearchSection }

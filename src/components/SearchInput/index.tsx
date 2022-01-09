@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Box, Button, IconButton, OutlinedInput } from "@mui/material";
+import { Box, IconButton, OutlinedInput } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { ipDataContext } from "providers/ipDataProvider";
 
