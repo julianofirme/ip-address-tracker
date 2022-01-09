@@ -4,7 +4,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { DataBox } from "./StyledComponents";
 
 function IpData() {
-  const { ipData, ipAddress } = useContext(ipDataContext);
+  const { ipData } = useContext(ipDataContext);
 
   return (
     <Box
@@ -23,7 +23,7 @@ function IpData() {
         <Grid item xs>
           <DataBox>
             <Typography
-              sx={{ fontWeight: "500", fontSize: "12px", color: "#333" }}
+              sx={{ fontWeight: "500", fontSize: "12px", color: "#333", marginBottom: '12px' }}
             >
               IP ADDRESS
             </Typography>
@@ -35,7 +35,7 @@ function IpData() {
         <Grid item xs>
           <DataBox>
             <Typography
-              sx={{ fontWeight: "500", fontSize: "12px", color: "#333" }}
+              sx={{ fontWeight: "500", fontSize: "12px", color: "#333", marginBottom: '12px' }}
             >
               LOCATION
             </Typography>
@@ -47,7 +47,7 @@ function IpData() {
         <Grid item xs>
           <DataBox>
             <Typography
-              sx={{ fontWeight: "500", fontSize: "12px", color: "#333" }}
+              sx={{ fontWeight: "500", fontSize: "12px", color: "#333", marginBottom: '12px' }}
             >
               TIMEZONE
             </Typography>
