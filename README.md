@@ -1,18 +1,36 @@
 # IP address tracker 
 
 This is a simple solution to you track any IP address. 
+<p align="left">
+  <img src="https://i.ibb.co/XZZVKRR/Screenshot-1.png" width="700" alt="accessibility text">
+</p>
 
 ## Overview
 
 ### About project
 
 Users should be able to:
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements on the page
 - See their own IP address on the map on the initial page load
 - Search for any IP addresses or domains and see the key information and location
 
-### Built with
+## Tutorial
+- Create an .env file in project root and add the following variable: ``REACT_APP_IP_GEOLOCATION_API_KEY: your IPify token``
+- Run this steps:
+```bash
+# Clone this repository
+git clone https://github.com/jfirme-sys/ip-address-tracker.git
+
+# Access the project folder
+cd ip-address-tracker
+
+# Install dependencies
+npm install
+
+# Run!
+npm start
+```
+
+## Built with
 
 - [Typescript](https://www.typescriptlang.org/) - JS superset 
 - [React](https://reactjs.org/) - JS library
