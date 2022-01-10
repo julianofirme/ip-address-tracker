@@ -1,4 +1,4 @@
-# IP address tracker 
+# IP Address Tracker 
 
 This is a simple solution to you track any IP address. 
 <p align="left">
