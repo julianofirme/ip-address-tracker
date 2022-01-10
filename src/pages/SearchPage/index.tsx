@@ -8,16 +8,16 @@ import React from "react";
 import { SearchSection } from "./components";
 
 const SearchPage: React.FC = () => {
-  
+
   return (
     <IpDataProvider>
       <SearchSection>
         <Title />
         <SearchInput />
+        <Box sx={{ width: '100vw', display: 'flex', justifyContent: 'center', zIndex: '2' }}>
+          <IpData />
+        </Box>
       </SearchSection>
-      <Box sx={{ width: '100vw', display: 'flex', justifyContent: 'center', position: 'absolute', zIndex: '2' }}>
-        <IpData />
-      </Box>
       <MapComponent />
     </IpDataProvider>
   );
