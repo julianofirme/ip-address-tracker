@@ -24,7 +24,7 @@ function MapComponent() {
 
   return (
     <>
-      <MapContainer center={position} zoom={13} scrollWheelZoom={true} whenCreated={setmap}>
+      <MapContainer center={position} zoom={15} scrollWheelZoom={true} whenCreated={setmap}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
