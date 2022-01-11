@@ -14,7 +14,7 @@ const SearchPage: React.FC = () => {
       <SearchSection>
         <Title />
         <SearchInput />
-        <Box sx={{ width: '100vw', display: 'flex', justifyContent: 'center', zIndex: '2' }}>
+        <Box sx={{ width: '90%', display: 'flex', justifyContent: 'center', zIndex: '2' }}>
           <IpData />
         </Box>
       </SearchSection>

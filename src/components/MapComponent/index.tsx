@@ -1,32 +1,38 @@
-import React, { useContext, useLayoutEffect, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ipDataContext } from 'providers/ipDataProvider';
-import mapboxgl, { LngLatLike, Map } from 'mapbox-gl'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import L, { LatLngExpression, Map } from 'leaflet';
+import 'leaflet/dist/leaflet.css'
+import './map.css'
+const icon = require( 'assets/marker-icon.png');
+const iconShadow = require('assets/marker-shadow.png');
+
+let DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 function MapComponent() {
   const { ipData } = useContext(ipDataContext);
-  const mapContainer = useRef<HTMLDivElement | null>(null);
-  const map = useRef<Map>();
-  const position = [ipData.location.lat, ipData.location.lng] as LngLatLike 
-  console.log(position)
-  const [zoom, setZoom] = useState(9);
-
-  mapboxgl.accessToken = process.env.REACT_APP_MAP_BOX_TOKEN as string;
-
-  useLayoutEffect(() => {
-    if (map.current) return;
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current as HTMLElement,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: position,
-      zoom: zoom
-    })
-  }, []);
+  const position = [ipData.location.lat, ipData.location.lng] as LatLngExpression
+  const [map, setmap] = useState<Map>();
+  if (map) {
+    map.setView(position);
+  }
 
   return (
     <>
-      <div>
-        <div style={{ height: '520px', maxWidth: '1440px' }} ref={mapContainer} className="map-container" />
-      </div>
+      <MapContainer center={position} zoom={13} scrollWheelZoom={true} whenCreated={setmap}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          
+        </Marker>
+      </MapContainer>
     </>
   );
 }
