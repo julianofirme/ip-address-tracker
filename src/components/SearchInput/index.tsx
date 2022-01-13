@@ -16,8 +16,9 @@ const SearchInput: React.FC = () => {
   }
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Box data-testid="search-input-box" sx={{ display: "flex", alignItems: "center" }}>
       <OutlinedInput
+        data-testid="search-input"
         sx={{
           background: "#fff",
           borderRadius: "14px 0 0 14px",

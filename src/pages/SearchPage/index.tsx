@@ -10,8 +10,8 @@ import { Container, SearchSection } from "./components";
 const SearchPage: React.FC = () => {
 
   return (
-    <IpDataProvider>
-      <Container>
+    <Container>
+      <IpDataProvider>
         <SearchSection>
           <Title />
           <SearchInput />
@@ -20,8 +20,8 @@ const SearchPage: React.FC = () => {
           </Box>
         </SearchSection>
         <MapComponent />
-      </Container>
-    </IpDataProvider>
+      </IpDataProvider>
+    </Container>
   );
 };
 
