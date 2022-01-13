@@ -10,6 +10,7 @@ function setup() {
 describe("Title", () => {
   it("should be display title", () => {
     setup();
+    
     const title = screen.getByRole('heading', {
       level: 4,
       name: 'IP Address Tracker'
