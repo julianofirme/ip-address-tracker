@@ -1,11 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { ChangeEventHandler, useContext, useState } from "react";
 import { Box, IconButton, OutlinedInput } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { ipDataContext } from "providers/ipDataProvider";
+import Snackbar from "components/Snackbar";
+
+const IP_REGEX = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
 
 const SearchInput: React.FC = () => {
   const { setIpAddress } = useContext(ipDataContext);
   const [inputValue, setInputValue] = useState<string>("");
+  const [inputError, setInputError] = useState<boolean>(false);
 
   const handleChange = (event: any) => {
     const {
@@ -13,6 +17,22 @@ const SearchInput: React.FC = () => {
     } = event
 
     setInputValue(value)
+  }
+
+  const validateIPaddress = (ipAddress: string) => {
+    if (IP_REGEX.test(ipAddress)) {
+      return (true)
+    }
+    return (false)
+  }
+
+  const onClickSearchButton = () => {
+    if (!validateIPaddress(inputValue)) {
+      setInputError(true)
+    } else {
+      setIpAddress(inputValue)
+      setInputError(false);
+    }
   }
 
   return (
@@ -31,7 +51,7 @@ const SearchInput: React.FC = () => {
       <IconButton
         aria-label="search ip address"
         sx={{ p: 0 }}
-        onClick={() => setIpAddress(inputValue)}
+        onClick={onClickSearchButton}
       >
         <Box
           sx={{
@@ -46,6 +66,12 @@ const SearchInput: React.FC = () => {
           <SearchIcon sx={{ fill: "#FFF" }} />
         </Box>
       </IconButton>
+      <Snackbar
+        message={"Invalid ip address"}
+        onOpen={inputError}
+        onClose={() => setInputError(false)}
+        onClick={() => setInputError(false)}
+      />
     </Box>
   );
 };
