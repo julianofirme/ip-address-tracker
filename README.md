@@ -26,9 +26,6 @@ cd ip-address-tracker
 # Install dependencies
 npm install
 
-# Run tests
-npm t
-
 # Run app!
 npm start
 ```
