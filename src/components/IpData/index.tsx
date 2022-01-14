@@ -8,6 +8,7 @@ function IpData() {
 
   return (
     <Box
+      data-testid="ip-data"
       sx={{
         background: "#FFF",
         width: "75%",
