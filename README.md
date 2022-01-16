@@ -5,17 +5,13 @@ This is a simple solution to you track any IP address.
   <img src="https://i.ibb.co/XZZVKRR/Screenshot-1.png" width="700" alt="accessibility text">
 </p>
 
-## Overview
-
-### About project
-
+## About project
 Users should be able to:
 - See their own IP address on the map on the initial page load
 - Search for any IP addresses or domains and see the key information and location
 
 ## Tutorial
-- Create an .env file in project root and add the following variable: ``REACT_APP_IP_GEOLOCATION_API_KEY: your IPify token``
-- Run this steps:
+- Follow the steps to install and run the project:
 ```bash
 # Clone this repository
 git clone https://github.com/jfirme-sys/ip-address-tracker.git
@@ -26,6 +22,10 @@ cd ip-address-tracker
 # Install dependencies
 npm install
 
+```
+- Create an .env file in project root and add the following variable: ``REACT_APP_IP_GEOLOCATION_API_KEY: your IPify token``
+
+```bash
 # Run app!
 npm start
 ```
@@ -35,7 +35,7 @@ npm start
 - [Typescript](https://www.typescriptlang.org/) - JS superset 
 - [React](https://reactjs.org/) - JS library
 - [Material UI](https://mui.com/pt/) - For components
-- [IP Geolocation API](https://geo.ipify.org/) - For IP location
+- [IPify API](https://geo.ipify.org/) - For IP location
 - [React Leaflet](https://react-leaflet.js.org/) - For map component
 
 ## Author
