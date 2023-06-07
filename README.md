@@ -2,7 +2,7 @@
 
 This is a simple solution to you track any IP address. 
 <p align="left">
-  <img src="https://i.ibb.co/XZZVKRR/Screenshot-1.png" width="700" alt="accessibility text">
+  <img src="https://i.ibb.co/XZZVKRR/Screenshot-1.png" width="600" alt="accessibility text">
 </p>
 
 ## About project
